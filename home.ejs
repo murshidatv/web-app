@@ -1,0 +1,50 @@
+<% include('../layouts/header.ejs') %>
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login Form</title>
+  <link rel="stylesheet" href="/user/css/other.css">
+</head>
+ 
+<body>
+<div class="container">
+
+<h3>Welcome ,<%= user.name %></h3>
+
+<table width="50%" style="border:1px solid rgb(145, 140, 140) ">
+ 
+    <tr>
+        <td><img src="userImages/<%= user.image%>"width="100px"height="100px"></td>
+    </tr>
+    <br>
+    <tr>
+    <br>
+        <td>Email</td>
+        <td><%= user.email %></td>
+    </tr>
+    <tr>
+        <td>Mobile</td>
+        <br>
+        <td><%= user.mobile %></td>
+    </tr>
+
+</table>
+
+<br>
+
+<a href ="/logout">Logout</a>
+
+</div>
+  </body>
+
+
+
+
+
+
+
+<%include('../layouts/footer.ejs') %>

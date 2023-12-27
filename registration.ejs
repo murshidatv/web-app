@@ -1,0 +1,63 @@
+<% include('../layouts/header.ejs') %>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login Form</title>
+  <link rel="stylesheet" href="/user/css/register.css">
+</head>
+
+<body>
+<div class="register">
+<h2 class="active"> User Registration Form </h2>
+
+
+<form action="/register" method="post" enctype="multipart/form-data">
+    <input type="text" name="name" placeholder="Enter Name" required class="text">
+    <br>
+    <input type="email" name="email" placeholder="Enter Email" required class="text">
+    <br>
+    <input type="text" name="mno" placeholder="Enter Mobile" required class="text">
+    <br>
+    <input type="file" name="image" required >
+    <br>
+    <input type="password" name="password" placeholder="Enter Password" class="text">
+    <span id="passwordError" class="error" style="color: red;"></span>
+    <br>
+    <div >
+    <button class="btn-register">Register</button> 
+    
+</form>
+
+<script>
+
+
+  if (password.trim()=== ''){
+    document.getElementById('passwordError').innerText = 'Password is required.';
+    return false;
+  }
+  if (password.length < 6){
+    document.getElementById('passwordError').innerText = 'Password must be at least 6 characters.';
+  }
+    
+</script>
+
+
+</div>
+
+<a href="/login"><h5>Login here</h5></a>
+
+<%
+if(typeof message !== 'undefined'){
+    %>
+    <p style="color:brown;"><%= message %></p>
+    <%
+}
+
+%>
+
+</div>
+  </body>
+<%include('../layouts/footer.ejs') %>
